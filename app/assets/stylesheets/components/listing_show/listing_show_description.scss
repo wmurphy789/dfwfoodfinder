@@ -1,0 +1,57 @@
+.vendorshow__desc-container {
+  width: 100%;
+  display: flex;
+  padding: 5rem 0;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.vendorshow__desc-content-wrapper {}
+
+.vendorshow__desc-flair {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.vendorshow__desc-flairitem {
+  margin-bottom: 1.6rem !important;
+  font-weight: 600;
+  color: #484848;
+  margin-right: 1.2rem;
+}
+.vendorshow__desc-content {
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  line-height: 1.75em !important;
+  color: #484848 !important;
+  max-width: 800px;  
+  margin-right: 4rem;
+}
+.vendorshow__desc-host {
+  max-width: 33.33%;
+  display: flex;
+}
+
+.vendorshow__desc-host-img-wrapper {
+  margin-right: 1.2rem;  
+}
+
+.vendorshow__desc-host-img {
+  background-size: cover;
+  width: 85px;
+  height: 85px;
+  background-position: center;
+  border-radius: 50%;
+}
+.vendorshow__desc-host-review-outer {}
+
+.vendorshow__desc-host-review-text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 2rem;
+  margin-bottom: 1rem;  
+}
+.vendorshow__desc-host-review-author {
+  font-size: 15px;
+  font-weight: 600;
+  color: #484848 !important;  
+}

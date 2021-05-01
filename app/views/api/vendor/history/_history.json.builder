@@ -1,0 +1,1 @@
+json.extract! history, :id, :start_time, :end_time, :location, :location_description
