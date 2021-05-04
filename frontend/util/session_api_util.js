@@ -34,3 +34,21 @@ export const logInVendor = vendor => {
     data: { vendor }
   });
 }
+
+// signup
+
+export const signUpVendor = vendor => {
+  const data = new FormData()
+  for ( var key in vendor ) {
+    console.log(vendor[key])
+    data.append("vendor["+key+"]", vendor[key]);
+  }
+  console.log(JSON.stringify(data))
+  return $.ajax({
+    method: 'POST',
+    processData: false,
+    contentType: false,
+    url: '/api/vendor/users',
+    data: data
+  });
+}

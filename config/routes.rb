@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     namespace :vendor do
       resource :session, only: [:create, :destroy]
+      resources :users, only: [:create]
       resources :history, only: [:index]
     end
 

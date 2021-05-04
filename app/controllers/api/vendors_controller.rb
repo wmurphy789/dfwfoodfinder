@@ -24,7 +24,9 @@ class Api::VendorsController < ApplicationController
   private
 
   def vendor_params
-    params.require(:vendor).permit(:title, :description, :num_guests, :vendor_type, :num_beds, :num_baths, :price, :self_check_in, :parking, :kitchen, :washer, :dryer, :dishwasher, :wifi, :tv, :bathroom_essentials, :bedroom_comforts, :coffee_maker, :hair_dryer, :location, :location_description, :lat, :long, :host_id, photos: [], thumbnails: [])
+    params.require(:vendor).permit(:title, :description, :num_guests, :vendor_type, :num_beds, :num_baths, :price, 
+      :self_check_in, :parking, :kitchen, :washer, :dryer, :dishwasher, :wifi, :tv, :bathroom_essentials, :bedroom_comforts, 
+      :coffee_maker, :hair_dryer, :location, :location_description, :lat, :long, :host_id, photos: [], thumbnails: [])
   end
 
   def bounds

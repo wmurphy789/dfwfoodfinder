@@ -14,15 +14,7 @@ const mdp = dispatch => {
   return ({
     processForm: user => dispatch(logInVendor(user)),
     processDemoForm: user => dispatch(logInVendor(user)),
-    clearErrors: () => dispatch(clearErrors()),
-    otherForm: (
-      <a
-        href="#"
-        className="modal__btn-other-form"
-        onClick={() => dispatch(openModal('signup'))}>
-        Sign up
-      </a>
-    )
+    clearErrors: () => dispatch(clearErrors())
   });
 };
 

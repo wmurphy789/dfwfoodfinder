@@ -11,6 +11,8 @@ class Session extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginDemoUser = this.loginDemoUser.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleVendorClick = this.handleVendorClick.bind(this);
   }
 
   componentDidMount() {
@@ -80,6 +82,16 @@ class Session extends React.Component {
     loginCallback();
   }
 
+  handleVendorClick(e) {
+    e.preventDefault();
+    this.props.history.push(`/vendor/signup`);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.props.history.push(`/`);
+  }
+
   render() {
 
     // Errors
@@ -99,14 +111,6 @@ class Session extends React.Component {
           }
         </div>
       );
-    }
-
-    // Sign up/Log in message
-    let existingAccountMessage;
-    if (this.props.formType === 'Log in') {
-      existingAccountMessage = "Don't have an account?";
-    } else {
-      existingAccountMessage = "Already have an account?";
     }
 
     return (
@@ -150,9 +154,14 @@ class Session extends React.Component {
         </form>
         <div className="modal__other-form-container">
           <p className="modal__account-msg">
-            {existingAccountMessage}
+            Don't have an account?
           </p>
-          {this.props.otherForm}
+          <a
+            href="#"
+            className="modal__btn-other-form"
+            onClick={this.handleVendorClick}>
+            Sign up
+          </a>
         </div>
         <div className="modal__other-form-container">
           <div className="modal__divider-container">
@@ -162,7 +171,7 @@ class Session extends React.Component {
         <p className="vendor_link">
           <a
             href="#"
-            onClick={this.handleVendorClick} 
+            onClick={this.handleClick} 
             className="modal__btn-other-form">
             Not a Vendor?
           </a>

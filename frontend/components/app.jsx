@@ -8,6 +8,7 @@ import VendorShowContainer from './vendors/vendor_show/vendor_show_container';
 import CheckoutContainer from './checkout/checkout_container';
 import TripsContainer from './trips/trips_container';
 import SessionContainer from './vendor/session/session_container';
+import SignupContainer from './vendor/session/signup_container';
 import HomeContainer from './vendor/home/home_index_container';
 import HistoryContainer from './vendor/history/history_index_container';
 import VendorLayout from './layout/vendor_layout'
@@ -18,6 +19,7 @@ const App = () => {
       <Switch>
         <AuthRoute exact path="/" component={LandingMain} />
         <AuthRoute exact path="/vendor/session" component={SessionContainer} />
+        <AuthRoute exact path="/vendor/signup" component={SignupContainer} />
 
         <ProtectedRoute 
           path="/vendors/:vendorId" 

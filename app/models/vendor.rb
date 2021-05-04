@@ -1,13 +1,20 @@
 class Vendor < ApplicationRecord
-  has_many_attached :photos
-  has_many_attached :thumbnails
+  has_one_attached :photo
   has_many :reviews, foreign_key: :vendor_id, class_name: 'Review'
   has_many :reviewers, through: :reviews, source: :user
   has_many :locations
 
+  validates :email, :session_token, uniqueness: true
+  validates :email, presence: true
+  validates :password, length: {minimum: 6, allow_nil: true}
+  validate :validate_password
+
   enum vendor_type: [:food_truck, :homemade]
 
   before_validation :ensure_session_token
+
+  attr_reader :password
+  attr_accessor :confirm_password
 
   def self.in_bounds(bounds)
     bounds = JSON.parse(bounds)
@@ -57,6 +64,14 @@ class Vendor < ApplicationRecord
 
   def reset_session_token!
     self.session_token = SecureRandom::urlsafe_base64
+  end
+
+  private 
+
+  def validate_password
+    if password != confirm_password
+      errors.add(:password, "does not match confirmation password.")
+    end
   end
     
 end

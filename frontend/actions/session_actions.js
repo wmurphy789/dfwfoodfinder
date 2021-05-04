@@ -70,3 +70,11 @@ export const logInVendor = vendor => dispatch => {
       errors => dispatch(receiveSessionErrors(errors))
     );
 };
+
+export const signUpvendor = vendor => dispatch => {
+  return SessionApiUtil.signUpVendor(vendor)
+    .then(
+      vendor => dispatch(receiveCurrentVendor(vendor)), 
+      errors => dispatch(receiveSessionErrors(errors))
+    );
+};
