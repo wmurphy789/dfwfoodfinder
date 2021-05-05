@@ -45,10 +45,7 @@ class Index extends React.Component {
     } else {
       history_rows = (
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td colSpan="4">No Previous Checkins</td>
         </tr>
       )
     }
@@ -63,9 +60,9 @@ class Index extends React.Component {
             <thead className="thead-light">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Start Time</th>
+                <th scope="col">End Time</th>
+                <th scope="col">Location</th>
               </tr>
             </thead>
             <tbody>
